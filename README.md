@@ -11,9 +11,58 @@ Link: [here](https://dev.to/j_a_o_v_c_t_r/working-with-scylla-database-3al9)
 - Downloading image
 ```
 docker run --name scylla-db-test -d scylladb/scylla:4.1.0
+or
+docker run --name scyllaU -d scylladb/scylla:4.1.0 --overprovisioned 1 --smp 1 (i)
 ```
-- nodetool: *getting an error*
+- nodetool (making sure our node is  still up)
+```
+docker exec -it scyllaU nodetool status (ii)
+```
+- (skip) nodetool: *getting an error*
 ```
 nodetool: Unable to connect to Scylla API server: java.net.ConnectException: Connection refused (Connection refused)
 See 'nodetool help' or 'nodetool help <command>'.
 ```
+- Finally, we use the CQL Shell to interact with Scylla (Run a CQL shell)
+```
+docker exec -it scyllaU cqlsh (iii)
+```
+- Create a keyspace called “mykeyspace”
+```
+CREATE KEYSPACE mykeyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1};
+```
+Keep in mind that SimpleStrategy should not be used in production.
+
+-Next, create a table with three columns: user id, first name, and last name, and insert some data:
+```
+use mykeyspace; 
+```
+```
+CREATE TABLE users ( user_id int, fname text, lname text, PRIMARY KEY((user_id))); 
+```
+Insert into the newly created table two rows:
+```
+insert into users(user_id, fname, lname) values (1, 'rick', 'sanchez'); 
+insert into users(user_id, fname, lname) values (4, 'rust', 'cohle'); 
+```
+Read the table contents:
+```
+select * from users;
+```
+Result:
+```
+
+ user_id | fname | lname
+---------+-------+---------
+       1 |  rick | sanchez
+       4 |  rust |   cohle
+
+(2 rows)
+```
+*updating*
+
+
+
+
+
+
