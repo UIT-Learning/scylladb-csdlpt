@@ -6,7 +6,7 @@ git clone https://github.com/scylladb/scylla-code-samples.git
 ```
 cd scylla-code-samples/mms
 ```
-3.
+3. Check (cho vui)
 ```
 docker-compose --version
 ```
