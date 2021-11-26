@@ -1,7 +1,7 @@
 # Nodetool generic options
 - All options are supported:
 ```
-( -h | --host ) <host name> | <ip address>
+nodetool: ( -h | --host ) <host name> | <ip address>
 ( -p | --port ) <port number>
 ( -pw | --password ) <password >
 ( -u | --username ) <user name>
