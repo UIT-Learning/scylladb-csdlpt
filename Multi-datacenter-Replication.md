@@ -6,7 +6,7 @@ git clone https://github.com/scylladb/scylla-code-samples.git
 ```
 cd scylla-code-samples/mms
 ```
-3. Check (cho vui)
+3. Check version Docker (cho vui)
 ```
 docker-compose --version
 ```
@@ -120,7 +120,7 @@ docker-compose -f docker-compose-dc2.yml up -d
 ```
 16. After about 60 seconds, you should be able to see DC1 and DC2 when running the “nodetool status” command:
 ```
-docker exec -it mms_scylla-node1_1 nodetool status
+docker exec -it mms-scylla-node1-1 nodetool status
 ```
 =>
 ```
