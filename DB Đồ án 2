@@ -34,3 +34,17 @@ INSERT INTO tracking.tracking_salary ("id","first_name","last_name","timestamp",
 INSERT INTO tracking.tracking_salary ("id","first_name","last_name","timestamp","salary") VALUES ('2','Chau','Nguyen Thi','2017-11-11 10:22+0000',8000000) ;
 INSERT INTO tracking.tracking_salary ("id","first_name","last_name","timestamp","salary") VALUES ('2','Chau','Nguyen Thi','2017-11-11 11:05+0000',1100000) ;
 INSERT INTO tracking.tracking_salary ("id","first_name","last_name","timestamp","salary") VALUES ('2','Chau','Nguyen Thi','2017-11-11 12:05+0000',13000000) ;
+
+=> Query:
+
+select * from tracking_salary;
+select * from tracking_salary where id='1' ALLOW FILTERING;
+select * from tracking_salary where first_name='An' ALLOW FILTERING;
+select * from tracking_salary where salary>10000000 ALLOW FILTERING;
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+select * from tracking.tracking_salary;
+select * from tracking.tracking_salary where id='1' ALLOW FILTERING;
+select * from tracking.tracking_salary where first_name='An' ALLOW FILTERING;
+select * from tracking.tracking_salary where salary>10000000 ALLOW FILTERING;
