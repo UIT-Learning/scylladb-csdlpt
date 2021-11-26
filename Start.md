@@ -18,7 +18,7 @@ docker run --name scyllaU -d scylladb/scylla:4.1.0 --overprovisioned 1 --smp 1 (
 ```
 docker exec -it scyllaU nodetool status (ii)
 ```
-- (skip) nodetool: *getting an error*
+- (skip) nodetool: *getting an error* (Chờ 1->2 phút để node join vào datacenter)
 ```
 nodetool: Unable to connect to Scylla API server: java.net.ConnectException: Connection refused (Connection refused)
 See 'nodetool help' or 'nodetool help <command>'.
