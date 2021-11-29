@@ -7,6 +7,7 @@ usage: nodetool [(-pw <password> | --password <password>)]
         [(-pwf <passwordFilePath> | --password-file <passwordFilePath>)] <command>
         [<args>]
 ```
+
 Ex:
 ```
 ( -h | --host ) <host name> | <ip address>
