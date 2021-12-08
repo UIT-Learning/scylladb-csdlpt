@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+    congty03:
+        image: scylladb/scylla:latest
+        restart: always
+        command: --seeds=congty01,congty03 --smp 1 --memory 750M --overprovisioned 1 --api-address 0.0.0.0
+        volumes:
+            - "./scylla/scylla.yaml:/etc/scylla/scylla.yaml"
+            - "./scylla/cassandra-rackdc.properties.dc2:/etc/scylla/cassandra-rackdc.properties"
+        networks:
+            web:
+
+    congty04:
+        image: scylladb/scylla:latest
+        restart: always
+        command: --seeds=congty01,congty03 --smp 1 --memory 750M --overprovisioned 1 --api-address 0.0.0.0
+        volumes:
+            - "./scylla/scylla.yaml:/etc/scylla/scylla.yaml"
+            - "./scylla/cassandra-rackdc.properties.dc2:/etc/scylla/cassandra-rackdc.properties"
+        networks:
+            web:
+
+networks:
+    web:
+        driver: bridge
