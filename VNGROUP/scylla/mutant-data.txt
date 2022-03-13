@@ -1,4 +1,8 @@
-
+/**
+*
+* Hãy thử theo 1 data khác dài hơn.
+* Thêm 15 câu truy vấn
+*/
 CREATE KEYSPACE catalog WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy','DC1' : 3};
 
 USE catalog;
