@@ -1,5 +1,5 @@
 # scylladb-csdlpt
-install Docker: https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe
+install Docker trên Windows: https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe
 - install linux kernel
 - (Tải về gói update Linux kernel qua link https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 - Để WSL 2 làm mặc định khi cài đặt Linux distribution:
